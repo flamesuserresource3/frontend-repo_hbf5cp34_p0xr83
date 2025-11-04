@@ -1,28 +1,36 @@
-import { useState } from 'react'
+import Hero from "./components/Hero";
+import About from "./components/About";
+import MissionValues from "./components/MissionValues";
+import Join from "./components/Join";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-zinc-50 antialiased">
+      <header className="mx-auto max-w-5xl px-6 py-6">
+        <div className="flex items-center justify-between">
+          <a href="#" className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-lg bg-emerald-600" />
+            <span className="font-manrope text-sm font-semibold tracking-wide text-zinc-900">
+              EAATR
+            </span>
+          </a>
+          <nav className="hidden items-center gap-6 text-sm text-zinc-700 sm:flex">
+            <a className="transition hover:text-emerald-700" href="#about">
+              Hakkımızda
+            </a>
+            <a className="transition hover:text-emerald-700" href="#join">
+              Katıl
+            </a>
+          </nav>
         </div>
-      </div>
-    </div>
-  )
-}
+      </header>
 
-export default App
+      <main>
+        <Hero />
+        <About />
+        <MissionValues />
+        <Join />
+      </main>
+    </div>
+  );
+}
